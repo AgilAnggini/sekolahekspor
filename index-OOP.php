@@ -40,7 +40,6 @@
 			        echo "Address : $this->address";
 			    }
 			}
-			{
 
 			$myBio = new Bio();
 
@@ -55,9 +54,8 @@
 			$myBio->showSalam();
 			$myBio->showBio();
 			$myBio->showAddress();
-	      
-	      }
 
+				        
 		?>
 	</body>
 
