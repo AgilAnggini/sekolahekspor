@@ -11,62 +11,26 @@
 	<body>
 		<h1>Agil Anggini - 220013 </h1>
 
-    <form>
+    <form action="ouputtugas.php" method="GET" name="input">
         <div>
             <label>TUJUAN PEMBERANGKATAN</label> <br>
-            <input name="tujuan" type="text" placeholder="pilih tempat tujuan">
-
-			  <select id="tujuan" name="tujuan">
-			    <option value="volvo">Volvo</option>
-			    <option value="saab">Saab</option>
-			    <option value="fiat">Fiat</option>
-			    <option value="audi">Audi</option>
+			  <select name="tujuan" id="tujuan" name="tujuan">
+			    <option value="Jakarta">Jakarta</option>
+			    <option value="Tasikmalaya">Tasikmalaya</option>
+			    <option value="Garut">Garut</option>
+			    <option value="Tangerang">Tangerang</option>
 			  </select>
         </div>
+        <br>
          <div>
-            <label>JUMLAH TIKET YANG INGIN DIBELI</label> <br>
-            <input name="jumlah" type="text" placeholder="Masukkan jumlah tiket yang diinginkan">
+            <label>JUMLAH TIKET</label> <br>
+            <input name="jumlah" type="number" id="jumlah" name="jumlah" min="1" max="100">
         </div>
+        <br>
         <div>
             <button>Submit</button>
         </div>
     </form>
-
-
-		<?php
-
-			$username = @$_GET['username'];
-			$username = @$_GET['username'];
-			$username = @$_GET['username'];
-			$username = @$_GET['username'];
-			$username = @$_GET['username'];
-			$username = @$_GET['username'];
-			$alamat = @$_GET['alamat'];
-				if ($username) {
-				    echo "<strong>username:</strong> {$username} <br>";
-				}
-				if ($username) {
-				    echo "<strong>username:</strong> {$username} <br>";
-				}
-				if ($username) {
-				    echo "<strong>username:</strong> {$username} <br>";
-				}
-				if ($username) {
-				    echo "<strong>username:</strong> {$username} <br>";
-				}
-				if ($username) {
-				    echo "<strong>username:</strong> {$username} <br>";
-				}
-				if ($username) {
-				    echo "<strong>username:</strong> {$username} <br>";
-				}
-
-				if ($alamat) {
-				    echo "<strong>Alamat:</strong> {$alamat} <br>";
-			}
-
-		?>
-
 
 	</body>
 
