@@ -8,57 +8,51 @@
 <title>Belajar Sekolah Ekspor</title>
 </head>
 
-	<body>
-		<h1>Agil Anggini - 220013 </h1>
-
-    <form action="ouputtugas.php" method="post">
-        <div>
-            <label>TUJUAN PEMBERANGKATAN</label> <br>
-			  <select name="tujuan" id="tujuan" name="tujuan">
-			    <option value="Jakarta">Jakarta</option>
-			    <option value="Tasikmalaya">Tasikmalaya</option>
-			    <option value="Garut">Garut</option>
-			    <option value="Tangerang">Tangerang</option>
-			  </select>
-        </div>
-        <br>
-         <div>
-            <label>JUMLAH TIKET</label> <br>
-            <input name="jumlah" type="number" id="jumlah" name="jumlah" min="1" max="100">
-        </div>
-        <br>
-        <div>
-            <button>Submit</button>
-        </div>
-    </form>
-
-
 		<?php
-
-			$tujuan = @$_GET['tujuan'];
-			$jumlah = @$_GET['jumlah'];
+			$tujuan = $_GET["tujuan"];
+			$jumlah = $_GET["jumlah"];
+			
+		
+			//tujuan
 				if ($tujuan == "Jakarta") {
-				    echo "<strong>username:</strong> {$username} <br>";
-				}
-				if ($username) {
-				    echo "<strong>username:</strong> {$username} <br>";
-				}
-				if ($username) {
-				    echo "<strong>username:</strong> {$username} <br>";
-				}
-				if ($username) {
-				    echo "<strong>username:</strong> {$username} <br>";
-				}
-				if ($username) {
-				    echo "<strong>username:</strong> {$username} <br>";
-				}
-				if ($username) {
-				    echo "<strong>username:</strong> {$username} <br>";
+				    $harga =100000;
+				} else if ($tujuan == "Tangerang") {
+				    $harga =110000;
+				} else if ($tujuan == "Tasikmalaya") {
+				    $harga =60000;
+				} else if ($tujuan == "Garut") {
+				    $harga =70000;
 				}
 
-				if ($alamat) {
-				    echo "<strong>Alamat:</strong> {$alamat} <br>";
+
+			$total = ($jumlah*$harga);
+			if(isset($_GET ["diskon"])){
+			$diskon = $_GET["diskon"];
 			}
+
+			//total keseluruhan
+				if ($jumlah >= 3) {
+					$diskon = (($total*10)/100);
+				} else if ($jumlah >= 5) {
+					$diskon = (($total*15)/100);
+				} else if ($jumlah >= 10) {
+					$diskon = (($total*20)/100);
+				} else {
+					$diskon = 0;
+				}
+
+			$seluruh = ($total)-($diskon);
+
+			echo "<table>
+			<tr>
+			<td>
+			Tujuan Tiket : “{$tujuan}”<br>
+			Harga Tiket : “{$harga}”<br>
+			Jumlah Tiket : “{$jumlah}”<br>
+			Total Biaya: “{$seluruh}”<br>
+			</td>
+			</tr>
+			</table> ";
 
 		?>
 
